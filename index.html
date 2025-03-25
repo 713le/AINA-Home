@@ -14,8 +14,8 @@
       padding: 0;
       font-family: Hedvig Letters Sans, sans-serif;
       height: 100%;
-      /* background-color: #ffffff; */
       color: #000000;
+      overflow-x: hidden;
     }
 
     /* Letter Message Styles */
@@ -25,20 +25,25 @@
       align-items: center;
       background-color: #306AC0;
       color: white;
-      padding: 5px 35px;
-      font-size: 15px;
+      padding: 5px 15px;
+      font-size: 14px;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .letterMessage p {
       flex: 1;
       margin: 0;
       padding-right: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .letterMessage a {
       color: white;
       text-decoration: underline;
+      white-space: nowrap;
     }
 
     .letterMessage a:hover {
@@ -51,6 +56,7 @@
       cursor: pointer;
       color: white;
       flex-shrink: 0;
+      padding-left: 10px;
     }
 
     .letterMessage .close-btn:hover {
@@ -63,34 +69,36 @@
       justify-content: space-between;
       align-items: center;
       background-color: #ffffff;
-      padding: 20px 25px;
-      padding-bottom: 20px;
-      /* margin-left: 15px;
-      margin-right: 15px; */
+      padding: 15px 20px;
       border-bottom: 1px solid black;
-      position: sticky; /* Make the navbar sticky */
-      top: 0; /* Stick to the top of the page */
-      z-index: 1000; /* Ensure the navbar stays on top of other content */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
     }
 
     .navbar .logo {
       height: 40px;
       cursor: pointer;
-      margin-left: 10px;
+      margin-left: 5px;
     }
 
     .navbar .nav-buttons {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .navbar button {
       background-color: transparent;
       border: none;
       color: black;
-      font-size: 15px;
+      font-size: 14px;
       cursor: pointer;
-      padding: 10px 20px;
+      padding: 8px 12px;
+      margin: 2px;
+      white-space: nowrap;
     }
 
     .navbar button:hover {
@@ -101,49 +109,75 @@
     .navbar .get-started {
       background-color: white;
       border: 1px solid black;
-      margin-right:10px;
+      margin-right: 5px;
     }
 
     .navbar .get-started:hover {
       background-color: #306AC0;
     }
 
-    /* Tagline Styles */
-    /* .tagline {
+    /* Mobile menu button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid black;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-family: Kanit;
-      line-height: 1.2;
-      height: 80%;
-      font-size: 40px;
-      font-weight: bold;
-      text-align: center;
-      background-color: #ffffff;
-      color: #000000;
-      margin-top:150px;
-      margin-bottom:400px;
-      font-weight:normal;
-    } */
+    }
 
+    .menu-toggle:hover {
+      background-color: #306AC0;
+      color: white;
+      border-color: #306AC0;
+    }
+
+    /* Mobile header row - only visible on mobile */
+    .mobile-header-row {
+      display: none;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      gap:10px;
+    }
+
+    .mobile-header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Desktop logo and get-started - hidden on mobile */
+    .desktop-logo, .desktop-get-started {
+      display: block;
+    }
+
+    /* Tagline Styles */
     .tagline {
       position: relative;
       display: flex;
       justify-content: center;
-      align-items: center; /* Center vertically */
-      height: 100vh; /* Full viewport height */
+      align-items: center;
+      height: 100vh;
       font-family: Kanit;
-      font-size: 2.5vw; /* Responsive font size based on viewport width */
+      font-size: 2rem;
       line-height:1.2;
       font-weight: bold;
       text-align: center;
-      color: #ffffff; /* White text for better contrast */
-      overflow: hidden; /* Hide overflow from the video */
+      color: #ffffff;
+      overflow: hidden;
+      padding: 0 20px;
     }
 
     .tagline h1 {
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
       transform: translateY(-60px); 
+      margin: 0;
     }
 
     /* Video Background */
@@ -153,11 +187,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensure the video covers the entire area */
-      z-index: -1; /* Place the video behind the tagline text */
+      object-fit: cover;
+      z-index: -1;
     }
 
-    /* Fallback for video */
     .video-background img {
       position: absolute;
       top: 0;
@@ -181,6 +214,9 @@
       justify-content: left;
       margin-bottom: 20px;
       margin-top: 150px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 10px;
     }
 
     .carousel-tabs button {
@@ -211,6 +247,18 @@
       border-radius: 8px;
     }
 
+    @media (max-width: 768px) {
+      .carousel-images {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-images {
+        height: 300px;
+      }
+    }
+
     .carousel-images img {
       width: 100%;
       height: 100%;
@@ -232,11 +280,12 @@
       left: 10px;
       background-color: rgba(130, 130, 130, 0.7);
       color: rgb(255, 255, 255);
-      padding: 8px 250px 150px 8px;
+      padding: 8px 20px 50px 8px;
       border-radius: 4px;
       cursor: pointer;
       display: flex;
       align-items: left;
+      max-width: 90%;
     }
 
     .carousel-caption:hover {
@@ -245,19 +294,18 @@
 
     .carousel-caption span {
       margin-right: 5px;
-      font-size: 24px;
+      font-size: 18px;
     }
 
     .carousel-caption .arrow {
-      font-size: 24px;
+      font-size: 18px;
     }
 
     /* Platform Buttons Styles */
     .platform-buttons {
       display: flex;
       flex-direction: column;
-      /* width: 100%; */
-      margin-top: 20px; /* Adjust as needed */
+      margin-top: 20px;
       margin-left: 20px;
       margin-right: 20px;
     }
@@ -269,29 +317,34 @@
     }
 
     .platform-button {
-      /* width: 100%; */
       padding-bottom: 50px;
-      border-top: 1px solid #797979; /* Top border only */
+      border-top: 1px solid #797979;
       text-align: left;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
     .platform-button:hover {
-      background-color: #f0f0f0; /* Light gray background on hover */
+      background-color: #f0f0f0;
     }
 
     .platform-name {
       padding-top:5px;
-      font-size: 96px; /* Big text */
+      font-size: 4rem;
       line-height:1;
       font-family:Kanit;
       color: black;
     }
 
+    @media (max-width: 768px) {
+      .platform-name {
+        font-size: 3rem;
+      }
+    }
+
     .platform-subtext {
-      font-size: 20px; /* Smaller text */
-      color: #306AC0; /* Blue color */
+      font-size: 20px;
+      color: #306AC0;
     }
 
     /* Side Panel Styles */
@@ -300,12 +353,13 @@
       font-weight: normal;
       position: fixed;
       top: 0;
-      right: -500px;
-      width: 430px;
+      right: -100%;
+      width: 100%;
+      max-width: 430px;
       height: 100%;
       background-color: #ffffff;
       transition: right 0.3s ease;
-      padding: 30px;
+      padding: 20px;
       box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
       z-index:2000;
       overflow-y: auto;
@@ -317,8 +371,8 @@
     }
 
     .side-panel h2 {
-      margin-top: 100px;
-      font-size: 32px;
+      margin-top: 80px;
+      font-size: 28px;
       font-family: Kanit;
       font-weight: normal;
       line-height:1.2;
@@ -337,7 +391,8 @@
     }
 
     .side-panel button {
-      width: 40%;
+      width: 100%;
+      max-width: 200px;
       padding: 10px;
       margin: 45px 0px 100px;
       font-size:15px;
@@ -354,7 +409,8 @@
 
     .side-panel .close-panel-btn {
       position: absolute;
-      left: 30px;
+      left: 20px;
+      top: 20px;
       font-size: 36px;
       cursor: pointer;
       color: #000000;
@@ -381,22 +437,23 @@
       padding: 0px;
       margin: 100px 40px 0px 40px;
       background-color: white;
-      color: #000000;
+      /* color: #000000; */
     }
 
     .letter-page .letter-title {
-      font-size: 64px;
+      font-size: 3rem;
       font-family: Kanit;
       padding-bottom: 0px;
       line-height: 120%;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid black; 
+      margin-bottom: 40px;
     }
 
     .letter-page .close-btn {
       position: absolute;
       top: 100px;
-      right: 40px;
-      font-size: 50px;
+      right: 20px;
+      font-size: 40px;
       cursor: pointer;
       color: #000000;
       z-index:1;
@@ -409,31 +466,105 @@
     /* Two-column layout for letter content */
     .letter-content {
       display: flex;
+      gap: 40px;
+    }
+    
+    .letter-text {
+      flex: 1;
+      min-width: 0; /* Allows text to wrap properly */
+      font-size: 24px;
+    }
+
+    .language-buttons-container {
+      margin-right:40px;
+      flex: 1;
+      min-width: 0;
+      position: relative;
+      padding-top: 20px;
+    }
+
+    .language-buttons-container::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 1px;
+      /* background-color: black; */
+      margin-left: calc(-50vw + 50% + 20px); /* Center accounting for gap */
+    }
+
+
+    .language-buttons {
+      width: 100%;
+    }
+
+    /* .language-buttons::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 1px;
+      margin-left: calc(-50vw + 50%);
+    } */
+
+    .language-buttons button {
+      display: block;
+      width: 100%;
+      padding: 15px 0;
+      margin: 5px 0;
+      background-color: #ffffff;
+      border: none;
+      border-bottom: 1px solid black;
+      cursor: pointer;
+      font-size: 20px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .language-buttons button:hover {
+      border-bottom: 1px solid #306AC0;
+      color: #306AC0;
+    }
+
+
+    @media (min-width: 768px) {
+      .letter-content {
+        flex-direction: row;
+      }
     }
 
     .letter-text {
       flex: 1;
-      font-size: 24px;
-      width: 60%;
+      font-size: 1.2rem;
+      width: 100%;
     }
 
     .language-buttons {
-      flex: 0 0 100px;
+      flex: 0 0 auto;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .language-buttons {
+        margin-top: 0;
+        margin-left: 40px;
+      }
     }
 
     .language-buttons button {
       display: block;
-      width: 40%;
-      padding-right: 500px;
-      padding-top: 20px;
-      padding-bottom: 5px;
+      width: 100%;
+      padding: 15px 0;
       margin: 5px 0;
       background-color: #ffffff;
       color: #000000;
       border: 1px solid white;
       border-bottom: 1px solid black;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 18px;
+      text-align: left;
     }
 
     .language-buttons button:hover {
@@ -442,12 +573,190 @@
     }
 
     footer {
-      background-color: #306AC0; /* Blue background */
-      color: white; /* White text */
-      padding: 10px 10px; /* Thick padding */
-      text-align: center; /* Center-align text */
-      font-size: 15px; /* Larger font size */
+      background-color: #306AC0;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 15px;
       margin-top:50px;
+    }
+
+    /* Mobile-specific styles */
+    @media (max-width: 768px) {
+      .letterMessage {
+        white-space: normal;
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+      
+      .letterMessage p {
+        white-space: normal;
+      }
+      
+      .navbar {
+        padding: 10px;
+        flex-direction: column;
+      }
+      
+      .mobile-header-row {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      /* Hide desktop logo and get-started on mobile */
+      .desktop-logo, .desktop-get-started {
+        display: none;
+      }
+
+      .mobile-header-row {
+        display: flex;
+      }
+      .navbar {
+        padding: 10px 20px;
+        flex-direction: column;
+      }
+      .navbar .nav-buttons {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-s
+      }
+      
+      .navbar .nav-buttons.show {
+        display: flex;
+      }
+
+      .navbar .nav-buttons button {
+        width: 100%;
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .navbar .get-started {
+        margin: 0;
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+      
+      .navbar button {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 14pxl;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .navbar .logo {
+        height: 35px;
+        margin:0;
+      }
+      
+      .tagline h1 {
+        font-size: 2rem;
+        transform: translateY(-30px);
+      }
+      
+      .carousel-tabs {
+        margin-top: 50px;
+      }
+      
+      .side-panel {
+        width: 90%;
+        padding: 15px;
+      }
+      
+      .side-panel h2 {
+        margin-top: 60px;
+        font-size: 24px;
+      }
+      
+      .letter-page {
+        margin: 100px 20px 0px 20px;
+      }
+      
+      .letter-page .letter-title {
+        font-size: 2rem;
+      }
+
+      .letter-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .language-buttons-container {
+        margin-right: 0px; /* Matches other mobile content */
+      }
+      .language-buttons-container::before {
+        margin-left: -20px;
+        width: calc(100% + 40px);
+      }
+      
+      .letter-page .close-btn {
+        top: 80px;
+        right: 15px;
+        font-size: 30px;
+      }
+      
+      .letter-text {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+        font-size: 1rem;
+      }
+
+      .language-buttons {
+        min-width: 100%;
+        margin-top: 30px;
+      }
+      
+      .language-buttons::before {
+        margin-left: -20px;
+        width: calc(100% + 40px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tagline h1 {
+        font-size: 1.5rem;
+      }
+      
+      .platform-name {
+        font-size: 2.5rem;
+      }
+      
+      .platform-subtext {
+        font-size: 16px;
+      }
+      
+      .mobile-header-row {
+        padding: 5px 0;
+      }
+
+      .menu-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+      }
+      
+      .navbar .get-started {
+        padding: 6px 10px;
+        font-size: 13px;
+      }
+      
+      .navbar .logo {
+        height: 30px;
+      }
+      
+      .navbar .get-started {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -461,22 +770,29 @@
   <div class="homescreen">
   <!-- Navbar -->
   <div class="navbar">
-    <!-- Logo -->
-    <img src="aina_logo.png" alt="AINA Logo" class="logo" onclick="goToHomePage()">
+    <!-- Mobile header row (only visible on mobile) -->
+    <div class="mobile-header-row">
+      <img src="aina_logo.png" alt="AINA Logo" class="logo" onclick="goToHomePage()">
+      <div class="mobile-header-right">
+        <button class="get-started" onclick="openSidePanel()">Get Started</button>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+    
+    <!-- Desktop logo (hidden on mobile) -->
+    <img src="aina_logo.png" alt="AINA Logo" class="desktop-logo logo" onclick="goToHomePage()">
+    
     <!-- Nav Buttons -->
-    <div class="nav-buttons">
+    <div class="nav-buttons" id="navButtons">
       <button>Low Level Machine Learning</button>
       <button>Real Time Information Sharing</button>
       <button>Community Mapping</button>
       <button>Highly Specialized AI</button>
     </div>
-    <button class="get-started" onclick="openSidePanel()">Get Started</button>
+    
+    <!-- Desktop Get Started button (hidden on mobile) -->
+    <button class="desktop-get-started get-started" onclick="openSidePanel()">Get Started</button>
   </div>
-
-  <!-- Tagline -->
-  <!-- <div class="tagline" id="tagline">
-    <h1>Highly Specialized Models<br>To Assist Those<br>Who Protect and Serve</h1>
-  </div> -->
 
   <!-- Tagline with Video Background -->
   <div class="tagline" id="tagline">
@@ -548,12 +864,14 @@
       <div class="letter-text" id="letterText">
         <p>Read the letter from Chief Executive Officer<br>Kimberly Adams:</p>
       </div>
-      <div class="language-buttons">
-        <button onclick="showLetter('english')">English</button>
-        <button onclick="showLetter('spanish')">Spanish</button>
-        <button onclick="showLetter('french')">French</button>
-        <button onclick="showLetter('german')">German</button>
-        <button onclick="showLetter('chinese')">Chinese</button>
+      <div class="language-buttons-container">
+        <div class="language-buttons">
+          <button onclick="showLetter('english')">English</button>
+          <button onclick="showLetter('spanish')">Spanish</button>
+          <button onclick="showLetter('french')">French</button>
+          <button onclick="showLetter('german')">German</button>
+          <button onclick="showLetter('chinese')">Chinese</button>
+        </div>
       </div>
     </div>
   </div>
@@ -562,10 +880,17 @@
     <p>&copy; 2025 AINA TECH. All rights reserved.</p>
   </footer>
   <script>
+    // Function to toggle mobile menu
+    function toggleMenu() {
+      const navButtons = document.getElementById('navButtons');
+      navButtons.classList.toggle('show');
+    }
+
     // Function to open the side panel
     function openSidePanel() {
       document.getElementById('sidePanel').classList.add('open');
       document.querySelector('.letter-page .close-btn').style.display = 'none';
+      document.getElementById('navButtons').classList.remove('show');
     }
 
     // Function to close the side panel
@@ -583,7 +908,6 @@
       const jobTitle = document.getElementById('jobTitle').value;
       const company = document.getElementById('company').value;
 
-
       if (firstName && lastName && email && phoneNumber && jobTitle && company) {
         // Display thank you message
         const thankYouMessage = document.getElementById('thankYouMessage');
@@ -595,6 +919,8 @@
         setTimeout(() => {
           thankYouMessage.style.display = 'none';
           document.getElementById('sidePanel').classList.remove('open');
+          document.getElementById('sidePanelHeading').style.display = 'block';
+          document.getElementById('formInputs').style.display = 'block';
         }, 2000);
       } else {
         alert('Please fill out all fields.');
@@ -603,32 +929,34 @@
 
     // Function to show the letter page
     function showLetterPage() {
-      document.getElementById('tagline').style.display = 'none'; // Hide tagline
-      document.getElementById('letterPage').style.display = 'block'; // Show letter page
-      document.getElementById('letterMessageBar').style.display = 'none'; // Hide letter message bar
-      document.getElementById('carousel').style.display = 'none'; // Hide carousel
-      document.getElementById('platformButtons').style.display = 'none'; // Hide platforms
+      document.getElementById('tagline').style.display = 'none';
+      document.getElementById('letterPage').style.display = 'block';
+      document.getElementById('letterMessageBar').style.display = 'none';
+      document.getElementById('carousel').style.display = 'none';
+      document.getElementById('platformButtons').style.display = 'none';
+      document.getElementById('navButtons').classList.remove('show');
     }
 
     // Function to hide the letter page
     function hideLetterPage() {
-      document.getElementById('letterPage').style.display = 'none'; // Hide letter page
-      document.getElementById('tagline').style.display = 'flex'; // Show tagline
-      document.getElementById('carousel').style.display = 'block'; // Show carousel
-      document.getElementById('platformButtons').style.display = 'flex'; // Show platforms
+      document.getElementById('letterPage').style.display = 'none';
+      document.getElementById('tagline').style.display = 'flex';
+      document.getElementById('carousel').style.display = 'block';
+      document.getElementById('platformButtons').style.display = 'flex';
     }
 
     // Function to go back to the home page
     function goToHomePage() {
-      document.getElementById('letterPage').style.display = 'none'; // Hide letter page
-      document.getElementById('tagline').style.display = 'flex'; // Show tagline
-      document.getElementById('carousel').style.display = 'block'; // Show carousel
-      document.getElementById('platformButtons').style.display = 'flex'; // Show platforms
+      document.getElementById('letterPage').style.display = 'none';
+      document.getElementById('tagline').style.display = 'flex';
+      document.getElementById('carousel').style.display = 'block';
+      document.getElementById('platformButtons').style.display = 'flex';
+      document.getElementById('navButtons').classList.remove('show');
     }
 
     // Function to close the letter message bar
     function closeLetterMessageBar() {
-      document.getElementById('letterMessageBar').style.display = 'none'; // Hide letter message bar
+      document.getElementById('letterMessageBar').style.display = 'none';
     }
 
     // Function to show the letter in the selected language
@@ -703,6 +1031,17 @@
 
     // Initialize the first image
     showImage(0);
+    
+    // Close menu when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+      const navButtons = document.getElementById('navButtons');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const isClickInside = navButtons.contains(event.target) || menuToggle.contains(event.target);
+      
+      if (!isClickInside && window.innerWidth <= 768) {
+        navButtons.classList.remove('show');
+      }
+    });
   </script>
 </body>
 </html>
