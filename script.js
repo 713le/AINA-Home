@@ -121,10 +121,10 @@
   
   // Carousel Functionality
   const captions = [
-    { text: "Caption for Image 1", link: "https://example.com/1" },
-    { text: "Caption for Image 2", link: "https://example.com/2" },
-    { text: "Caption for Image 3", link: "https://example.com/3" },
-    { text: "Caption for Image 4", link: "https://example.com/4" },
+    { text: "Caption for Image 1", link: "https://713le.github.io/AINA-Home/machine-learning.html" },
+    { text: "Caption for Image 2", link: "https://713le.github.io/AINA-Home/information-sharing.html" },
+    { text: "Caption for Image 3", link: "https://713le.github.io/AINA-Home/community-mapping.html" },
+    { text: "Caption for Image 4", link: "https://713le.github.io/AINA-Home/specialized-ai.html" },
   ];
   
   function showImage(index) {
