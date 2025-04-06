@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROSSO | AINA TECH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Kanit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    
+</style>
+<body>
+  <div class="homescreen">
+    <!-- Navbar -->
+    <div class="navbar">
+      <!-- Mobile header row (only visible on mobile) -->
+      <div class="mobile-header-row">
+        <img src="aina_logo.png" alt="AINA Logo" class="logo" onclick="window.location.href='index.html'">
+        <div class="mobile-header-right">
+          <button class="get-started" onclick="openSidePanel()">Get Started</button>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+      </div>
+      
+      <!-- Desktop logo (hidden on mobile) -->
+      <img src="aina_logo.png" alt="AINA Logo" class="desktop-logo logo" onclick="window.location.href='index.html'">
+      
+      <!-- Nav Buttons -->
+      <div class="nav-buttons" id="navButtons">
+        <button onclick="window.location.href='machine-learning.html'">Low Level Machine Learning</button>
+        <button onclick="window.location.href='information-sharing.html'">Real Time Information Sharing</button>
+        <button onclick="window.location.href='community-mapping.html'">Community Mapping</button>
+        <button onclick="window.location.href='specialized-ai.html'">Highly Specialized AI</button>
+      </div>
+      
+      <!-- Desktop Get Started button (hidden on mobile) -->
+      <button class="desktop-get-started get-started" onclick="openSidePanel()">Get Started</button>
+    </div>
+
+    <!-- Header Image -->
+    <div class="header-image" id="headerImage">
+        <img src="placeholder.png" alt="Placeholder Image">
+    </div>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      <h1 class="page-title">ROSSO</h1>
+      <div class="content-placeholder">
+        <!-- Future content will go here -->
+      </div>
+    </div>
+
+    <!-- Side Panel -->
+    <div class="side-panel" id="sidePanel">
+        <div class="close-panel-btn" onclick="closeSidePanel()">×</div>
+        <h2 id="sidePanelHeading">Interested in solving your<br>problems with ROSSO<br>software?</h2>
+        <form id="formInputs">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phoneNumber" placeholder="Phone Number" required>
+            <input type="text" id="jobTitle" placeholder="Job Title" required>
+            <input type="text" id="company" placeholder="Company / Institution" required>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        <div class="thank-you-message" id="thankYouMessage">Thank you for your submission. We'll be in touch shortly.</div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 AINA TECH. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
