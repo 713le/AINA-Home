@@ -298,6 +298,7 @@
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    text-decoration: none;
   }
 
   .our-platforms {
@@ -310,6 +311,7 @@
     padding-bottom: 50px;
     border-top: 1px solid #797979;
     text-align: left;
+    text-decoration: none; 
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
