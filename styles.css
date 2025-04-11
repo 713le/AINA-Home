@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #306AC0;
+    background-color: #115688;
     color: white;
     padding: 5px 15px;
     font-size: 14px;
@@ -58,13 +58,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 15px 20px;
-    border-bottom: 1px solid black;
+    box-shadow:0 1px 12px rgba(0, 0, 0, 0.25);
     position: sticky;
     top: 0;
     z-index: 1000;
     flex-wrap: wrap;
+    border-radius:8px;
+    backdrop-filter: blur(8px);
   }
 
   .navbar .logo {
@@ -92,7 +94,7 @@
   }
 
   .navbar button:hover {
-    background-color: #306AC0;
+    background-color: #115688;
     color: white;
   }
 
@@ -103,7 +105,7 @@
   }
 
   .navbar .get-started:hover {
-    background-color: #306AC0;
+    background-color: #115688;
   }
 
   /* Mobile menu button */
@@ -122,9 +124,9 @@
   }
 
   .menu-toggle:hover {
-    background-color: #306AC0;
+    background-color: #115688;
     color: white;
-    border-color: #306AC0;
+    border-color: #115688;
   }
 
   /* Mobile header row - only visible on mobile */
@@ -221,12 +223,12 @@
   }
 
   .carousel-tabs button.active {
-    color: #306AC0;
-    border-bottom: 2px solid #306AC0;
+    color: #115688;
+    border-bottom: 2px solid #115688;
   }
 
   .carousel-tabs button:hover {
-    color: #306AC0;
+    color: #115688;
   }
 
   .carousel-images {
@@ -268,19 +270,20 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background-color: rgba(130, 130, 130, 0.7);
+    background-color: rgba(130, 130, 130, 0.5);
+    backdrop-filter: blur(8px);
     color: rgb(255, 255, 255);
-    padding: 8px 20px 50px 8px;
+    padding: 8px 20px 30px 8px;
     border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: left;
     max-width: 90%;
   }
-
-  .carousel-caption:hover {
+  /* uncomment when finish pages!! */
+  /* .carousel-caption:hover {
     background-color: rgba(74, 74, 74, 0.9);
-  }
+  } */
 
   .carousel-caption span {
     margin-right: 5px;
@@ -316,9 +319,10 @@
     transition: background-color 0.3s ease;
   }
 
-  .platform-button:hover {
+  /* uncomment when finish pages */
+  /* .platform-button:hover {
     background-color: #f0f0f0;
-  }
+  } */
 
   .platform-name {
     padding-top:5px;
@@ -336,7 +340,7 @@
 
   .platform-subtext {
     font-size: 20px;
-    color: #306AC0;
+    color: #115688;
   }
 
   /* Side Panel Styles */
@@ -347,7 +351,7 @@
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 430px;
+    max-width: 350px;
     height: 100%;
     background-color: #ffffff;
     transition: right 0.3s ease;
@@ -362,14 +366,23 @@
     right: 0;
   }
 
+  .side-panel .contact-demo-partnership {
+    font-size:10px;
+    color: #afafaf;
+    position: absolute;
+    /* left: 20px; */
+    top: 80px;
+
+  }
   .side-panel h2 {
     margin-top: 80px;
-    font-size: 28px;
-    font-family: Kanit;
+    padding-top:75px;
+    font-size: 24px;
+    font-family: "Hedvig Letters Sans";
     font-weight: normal;
     line-height:1.2;
   }
-
+  
   .side-panel input {
     width: 100%;
     font-size: 15px;
@@ -382,7 +395,7 @@
     border-bottom: 1px solid #000000;
   }
 
-  .side-panel button {
+  .side-panel button { /*submit button*/
     width: 100%;
     max-width: 200px;
     padding: 10px;
@@ -395,13 +408,13 @@
   }
 
   .side-panel button:hover {
-    background-color: #306AC0;
+    background-color: #115688;
     color: white;
   }
 
   .side-panel .close-panel-btn {
     position: absolute;
-    left: 20px;
+    /* left: 20px; */
     top: 20px;
     font-size: 36px;
     cursor: pointer;
@@ -409,13 +422,13 @@
   }
 
   .side-panel .close-panel-btn:hover {
-    color: #306AC0;
+    color: #115688;
   }
 
   .thank-you-message {
     display: none;
     text-align: center;
-    color: #306AC0;
+    color: #115688;
     font-size: 24px;
     font-family: Kanit;
     font-weight: normal;
@@ -452,7 +465,7 @@
   }
 
   .letter-page .close-btn:hover {
-    color: #306AC0;
+    color: #115688;
   }
 
   /* Two-column layout for letter content */
@@ -516,8 +529,8 @@
   }
 
   .language-buttons button:hover {
-    border-bottom: 1px solid #306AC0;
-    color: #306AC0;
+    border-bottom: 1px solid #115688;
+    color: #115688;
   }
 
 
@@ -560,12 +573,12 @@
   }
 
   .language-buttons button:hover {
-    border-bottom: 1px solid #306AC0;
-    color: #306AC0;
+    border-bottom: 1px solid #115688;
+    color: #115688;
   }
 
   footer {
-    background-color: #306AC0;
+    background-color: #115688;
     color: white;
     padding: 10px;
     text-align: center;
@@ -665,7 +678,7 @@
     
     .side-panel h2 {
       margin-top: 60px;
-      font-size: 24px;
+      font-size: 1.1rem;
     }
     
     .letter-page {

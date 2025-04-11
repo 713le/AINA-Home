@@ -121,8 +121,8 @@
   
   // Carousel Functionality
   const captions = [
-    { text: "Caption for Image 1", link: "https://713le.github.io/AINA-Home/machine-learning.html" },
-    { text: "Caption for Image 2", link: "https://713le.github.io/AINA-Home/information-sharing.html" },
+    { text: "YOUBE working with local communities, law enforcement, and private companies to  ensure a safe and secure FIFA Cup World Cup 2025", link: "https://713le.github.io/AINA-Home/information-sharing.html" },
+    { text: "Caption for Image 2", link: "https://713le.github.io/AINA-Home/machine-learning.html" },
     { text: "Caption for Image 3", link: "https://713le.github.io/AINA-Home/community-mapping.html" },
     { text: "Caption for Image 4", link: "https://713le.github.io/AINA-Home/specialized-ai.html" },
   ];
@@ -144,7 +144,9 @@
   
     // Update the caption and link
     captionText.textContent = captions[index].text;
-    carouselCaption.onclick = () => window.location.href = captions[index].link;
+
+    //uncomment when finish pages!!
+    //carouselCaption.onclick = () => window.location.href = captions[index].link;
   }
   
   // Initialize the first image

@@ -25,7 +25,7 @@
       <img src="aina_logo.png" alt="AINA Logo" class="logo" onclick="goToHomePage()">
       <div class="mobile-header-right">
         <button class="get-started" onclick="openSidePanel()">Get Started</button>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
       </div>
     </div>
     
@@ -33,12 +33,12 @@
     <img src="aina_logo.png" alt="AINA Logo" class="desktop-logo logo" onclick="goToHomePage()">
     
     <!-- Nav Buttons -->
-    <div class="nav-buttons" id="navButtons">
+    <!-- <div class="nav-buttons" id="navButtons">
       <button onclick="window.location.href='machine-learning.html'">Low Level Machine Learning</button>
       <button onclick="window.location.href='information-sharing.html'">Real Time Information Sharing</button>
       <button onclick="window.location.href='community-mapping.html'">Community Mapping</button>
       <button onclick="window.location.href='specialized-ai.html'">Highly Specialized AI</button>
-    </div>
+    </div> -->
     
     <!-- Desktop Get Started button (hidden on mobile) -->
     <button class="desktop-get-started get-started" onclick="openSidePanel()">Get Started</button>
@@ -47,19 +47,19 @@
   <!-- Tagline with Video Background -->
   <div class="tagline" id="tagline">
     <!-- Video Background -->
-    <video class="video-background" autoplay muted loop>
+    <video class="video-background" autoplay muted loop playsinline>
       <source src="driver.mov" type="video/mp4">
       <!-- Fallback image if video doesn't load -->
       <img src="placeholder-image.jpg" alt="Background Image">
     </video>
-    <h1>Highly Specialized Models<br>To Assist Those<br>Who Protect and Serve</h1>
+    <h1>Highly Specialized<br>Technology For Those<br>Who Protect and Serve</h1>
   </div>
 
   <!-- Carousel -->
   <div class="carousel" id="carousel">
     <div class="carousel-tabs">
-      <button class="active" onclick="showImage(0)">Low Level Machine Learning</button>
-      <button onclick="showImage(1)">Real Time Information Sharing</button>
+      <button class="active" onclick="showImage(0)">Real Time Information Sharing</button>
+      <button onclick="showImage(1)">Low Level Machine Learning</button>
       <button onclick="showImage(2)">Community Mapping</button>
       <button onclick="showImage(3)">Highly Specialized AI</button>
     </div>
@@ -68,15 +68,17 @@
       <img src="image2.jpg" alt="Image 2">
       <img src="image3.jpg" alt="Image 3">
       <img src="image4.jpg" alt="Image 4">
-      <div class="carousel-caption" id="carouselCaption" onclick="navigateToLink()">
+      <!-- uncomment when finish pages -->
+      <!-- <div class="carousel-caption" id="carouselCaption" onclick="navigateToLink()"> -->
+      <div class="carousel-caption" id="carouselCaption">
         <span id="captionText">Caption for Image 1</span>
-        <span class="arrow">→</span>
+        <!-- <span class="arrow">→</span> -->
       </div>
     </div>
   </div>
 
-  <!-- Our Platforms Buttons -->
-  <div class="platform-buttons" id="platformButtons">
+  <!-- Our Platforms Buttons UNCOMMENT WHEN FINISH PAGES-->
+  <!-- <div class="platform-buttons" id="platformButtons">
     <div class="our-platforms">Our Platforms</div>
     <a href="rosso.html" class="platform-button">
       <div class="platform-name">ROSSO</div>
@@ -86,12 +88,26 @@
       <div class="platform-name">YOUBE</div>
       <div class="platform-subtext">Placeholder text</div>
     </a>
+  </div> -->
+
+  <div class="platform-buttons" id="platformButtons">
+    <div class="our-platforms">Our Platforms</div>
+    <div class="platform-button">
+      <div class="platform-name">ROSSO</div>
+      <div class="platform-subtext">Train with conviction</div>
+    </div>
+    <div class="platform-button">
+      <div class="platform-name">YOUBE</div>
+      <div class="platform-subtext">Placeholder text</div>
+    </div>
   </div>
 
   <!-- Side Panel -->
   <div class="side-panel" id="sidePanel">
     <div class="close-panel-btn" onclick="closeSidePanel()">×</div>
-    <h2 id="sidePanelHeading">Interested in solving your<br>problems with ROSSO<br>software?</h2>
+    <div class="contact-demo-partnership" id="contactDemoPartnership">Contact / Demo / Partnership Opportunities</div>
+    <h2 id="sidePanelHeading">FIFA Cup World Cup 2025<br>Miami, Orlando, Atlanta, and New York City<br>Keep human trafficking out of your neighborhoods, business, and jurisdictions with our community led intelligence data sharing tool<br>Request a 10 minute DEMO.
+    </h2>
     <form id="formInputs">
       <input type="text" id="firstName" placeholder="First Name" required>
       <input type="text" id="lastName" placeholder="Last Name" required>
