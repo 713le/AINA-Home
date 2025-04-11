@@ -85,14 +85,16 @@
     switch (language) {
       case 'english':
         content = `
-          <p>It is our privilege to offer ROSSO, the first highly specialized artificial intelligence and machine learning platform designed to help the frontline detect human trafficking crimes that threaten local and national public safety and security.</p>
-          <p>A grave responsibility is imposed upon frontline defenders to correct violations and vindicate laws by prosecuting those who carry out this malignant and devastating crime.</p>
-          <p>ROSSO does not provide abstract interpretations. Created to pay significant tribute to victims and survivors, ROSSO honors the work of defenders by deploying the real-time, highly specialized information they need to prevent and protect against human trafficking and ensure public safety and security of all citizens.</p>
+          <p>It is our privilege to announce the development of ROSSO, the first highly specialized artificial intelligence and machine learning platform designed to help the frontline detect human trafficking crimes that threaten local and national safety and security.</p>
+          <p>A grave responsibility is imposed upon all of us to correct violations and vindicate laws by prosecuting those who carry out this malignant and devastating crime.</p>
+          <p>ROSSO does not provide abstract interpretations. Created to pay significant tribute to victims and survivors, ROSSO honors the work of law enforcement officers and private sector security and safety professionals by providing the real-time, highly specialized intelligence they need to prevent and protect neighborhoods and businesses from human trafficking.</p>
         `;
         break;
       case 'spanish':
         content = `
-          <p>Spanish letter here</p>
+          <p>Es nuestro privilegio ofrecer ROSSO, la primera plataforma de inteligencia artificial y aprendizaje automático altamente especializada diseñada para ayudar a la primera línea a detectar delitos de trata de personas que amenazan la seguridad pública local y nacional.</p>
+          <p>Se impone una grave responsabilidad a los defensores de primera línea para corregir las violaciones y reivindicar las leyes enjuiciando a aquellos que llevan a cabo este crimen maligno y devastador.</p>
+          <p>ROSSO no proporciona interpretaciones abstractas. Creado para rendir un homenaje significativo a las víctimas y sobrevivientes, ROSSO honra el trabajo de los defensores al desplegar la información en tiempo real y altamente especializada que necesitan para prevenir y proteger contra la trata de personas y garantizar la seguridad pública de todos los ciudadanos.</p>
         `;
         break;
       case 'french':
