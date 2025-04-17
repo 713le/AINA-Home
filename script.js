@@ -20,7 +20,7 @@
     document.querySelector('.letter-page .close-btn').style.display = 'block';
     document.getElementById('letterMessageBar').style.zIndex = '';
   }
-  
+
   document.getElementById('overlay').addEventListener('click', closeSidePanel);
 
   // Function to submit the form
@@ -129,8 +129,8 @@
   
   // Carousel Functionality
   const captions = [
-    { text: "YOUBE working with local communities, law enforcement, and private companies to  ensure a safe and secure FIFA Cup World Cup 2025", link: "https://713le.github.io/AINA-Home/information-sharing.html" },
-    { text: "Caption for Image 2", link: "https://713le.github.io/AINA-Home/machine-learning.html" },
+    { text: "YOUBE working with local communities, law enforcement, and private companies to  ensure a safe and secure FIFA Cup World Cup 2025.", link: "https://713le.github.io/AINA-Home/information-sharing.html" },
+    { text: "ROSSO Ed is an interactive non-prompting AI/ML tool for human trafficking trainers.", link: "https://713le.github.io/AINA-Home/machine-learning.html" },
     { text: "Caption for Image 3", link: "https://713le.github.io/AINA-Home/community-mapping.html" },
     { text: "Caption for Image 4", link: "https://713le.github.io/AINA-Home/specialized-ai.html" },
   ];
