@@ -20,6 +20,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
+    z-index:10000;
   }
 
   .letterMessage p {
@@ -357,7 +359,7 @@
     transition: right 0.3s ease;
     padding: 20px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index:2000;
+    z-index:10000;
     overflow-y: auto;
     overscroll-behavior: contain;
   }
@@ -576,6 +578,24 @@
     border-bottom: 1px solid #115688;
     color: #115688;
   }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 86, 136, 1); /* Dark blue with transparency */
+    z-index: 1000; /* Between navbar (1000) and side panel (2000) */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+  .overlay.active {
+    display: block;
+    opacity: 1;
+}
 
   footer {
     background-color: #115688;

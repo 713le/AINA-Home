@@ -6,17 +6,23 @@
   
   // Function to open the side panel
   function openSidePanel() {
+    document.getElementById('overlay').classList.add('active');
     document.getElementById('sidePanel').classList.add('open');
     document.querySelector('.letter-page .close-btn').style.display = 'none';
     document.getElementById('navButtons').classList.remove('show');
+    document.getElementById('letterMessageBar').style.zIndex = '2001';
   }
   
   // Function to close the side panel
   function closeSidePanel() {
+    document.getElementById('overlay').classList.remove('active');
     document.getElementById('sidePanel').classList.remove('open');
     document.querySelector('.letter-page .close-btn').style.display = 'block';
+    document.getElementById('letterMessageBar').style.zIndex = '';
   }
   
+  document.getElementById('overlay').addEventListener('click', closeSidePanel);
+
   // Function to submit the form
   function submitForm() {
     const firstName = document.getElementById('firstName').value;
