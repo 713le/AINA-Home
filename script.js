@@ -153,8 +153,7 @@
     // Update the caption and link
     captionText.textContent = captions[index].text;
 
-    //uncomment when finish pages!!
-    //carouselCaption.onclick = () => window.location.href = captions[index].link;
+    carouselCaption.onclick = () => window.location.href = captions[index].link;
   }
   
   // Initialize the first image
